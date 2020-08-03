@@ -1,4 +1,4 @@
-
+import {compose} from  './node_modules/lodash/fp';
 
 //redux is used to remove the synchronization problems between multiple UI components of an application. to reflect certain changes in every ui component we need not to make it for individual components i.e individual components does not maintain there state.
 //instead, there is a js object called store which does it all for every ui component.so necessary changes are required to be made only at one place.
@@ -25,7 +25,8 @@ returnValue(sayHello);
 //higher order functions
 const trims=str=>str.trim();
 const wrap=str=>`<div>${str}</div>`;
-const result=wrap(trims("vivek"));
+// const result=wrap(trims("vivek"));
+const result=compose(trims,wrap);
 console.log(result);
 
 // pure funtions
